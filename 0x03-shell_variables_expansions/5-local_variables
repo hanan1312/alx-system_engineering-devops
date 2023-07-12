@@ -1,2 +1,2 @@
 #!/bin/bash
-set | less  printenv | less  compgen -A function | less
+set
