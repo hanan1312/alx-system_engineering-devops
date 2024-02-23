@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# This script displays "Best School" 10 times, and on the 9th iteration, it displays "Best School" and then "Hi" on a new line
+
+# Initialize counter
+counter=1
+
+# Define the function to check the counter
+check_counter() {
+    if [ $counter -lt 9 ]; then
+        return 0
+    else
+        return 1
+    fi
+}
+
+# Loop while counter is less than or equal to 10
+while [ $counter -le 10 ]; do
+    if check_counter; then
+        echo "Best School"
+    else
+        echo -e "Best School\nHi"
+    fi
+    # Increment counter
+    ((counter++))
+done
