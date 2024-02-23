@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Function to handle SIGTERM signal
+
+terminate() {
+    echo "You can't kill me, I'm the Highlander!!!"
+    exit 0
+}
+
+trap terminate SIGTERM
+
+while true; do
+    echo "There can be only one"
+    sleep 2
+done
