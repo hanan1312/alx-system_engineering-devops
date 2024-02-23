@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
 # This script displays "bad luck" for the 4th loop iteration, "good luck" for the 8th loop iteration, and "Best School" for the other iterations
 
-# Initialize counter
 counter=1
 
-# Loop while counter is less than or equal to 10
 while [ $counter -le 10 ]; do
     if [ $counter -eq 4 ]; then
         echo "bad luck"
@@ -13,6 +11,5 @@ while [ $counter -le 10 ]; do
     else
         echo "Best School"
     fi
-    # Increment counter
     ((counter++))
 done
