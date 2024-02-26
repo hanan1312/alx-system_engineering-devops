@@ -4,7 +4,7 @@
 counter=1
 
 check_counter() {
-    if [ $counter -lt 9 ]; then
+    if [ $counter -eq 10 ]; then
         return 0
     else
         return 1
@@ -13,9 +13,8 @@ check_counter() {
 
 while [ $counter -le 10 ]; do
     if check_counter; then
-        echo "Best School"
-    else
-        echo -e "Best School\nHi"
+        echo "Hi"
     fi
+    echo "Best School"
     ((counter++))
 done
