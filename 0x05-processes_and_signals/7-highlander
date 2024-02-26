@@ -1,14 +1,9 @@
 #!/usr/bin/env bash
 # Function to handle SIGTERM signal
 
-terminate() {
-    echo "You can't kill me, I'm the Highlander!!!"
-    exit 0
-}
-
-trap terminate SIGTERM
-
-while true; do
-    echo "There can be only one"
-    sleep 2
+counter=1
+while [[ $counter -le 10 ]]; do
+  echo "To infinity and beyond"
+  sleep 2
+  trap 'echo "I am invincible!!!"' SIGTERM 
 done
