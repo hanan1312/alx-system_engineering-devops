@@ -4,12 +4,22 @@
 hour=0
 minute=1
 
-while [ $hour -le 12 ]; do
-    while [ $minute -le 59 ]; do
-        printf "%02d:%02d\n" $hour $minute
-        ((minute++))
-        [ $(($hour * 60 + $minute)) -eq 70 ] && break 2
-    done
-    ((hour++))
-    minute=0
-done | head -n 70
+while [ $hour -le 13 ]; do
+    if [ $hour -eq 0 ]; then
+        echo "Hour: $hour"
+        ((hour++))
+    elif [[ $minute -eq 60 ]]; then
+        echo "Hour: $hour"
+        ((hour++))
+        minute=1
+    fi
+    if [[ $minute -eq 59 && $hour -eq 13 ]]; then
+        echo "59"
+        break
+    fi
+    
+    echo $minute
+    ((minute++))
+
+    
+done
