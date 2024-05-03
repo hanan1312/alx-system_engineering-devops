@@ -24,7 +24,7 @@ frontend nelmogey.tech-frontend
     default_backend www-backend
 
 frontend nelmogey.tech-frontend-https
-    bind   0.0.0.0:443 ssl crt /etc/haproxy/certs/www.nelmogey.tech.pem
+    bind   0.0.0.0:443 ssl crt /etc/letsencrypt/live/www.nelmogey.tech/fullchain.pem
     reqadd X-Forwarded-Proto:\ https
     acl    letsencrypt-acl path_beg /.well-known/acme-challenge/
     use_backend letsencrypt-backend if letsencrypt-acl
