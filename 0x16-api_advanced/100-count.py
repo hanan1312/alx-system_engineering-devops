@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""function that queries the Reddit API and returns a list containing the titles"""
+"""queries the Reddit API"""
 
 import requests
 
@@ -8,11 +8,11 @@ def count_words(subreddit, word_list, instances={}, after="", count=0):
     """Prints counts of given words found in hot posts of a given subreddit.
 
     Args:
-        subreddit (str): The subreddit to search.
-        word_list (list): The list of words to search for in post titles.
+        subreddit (str): The search subreddit
+        word_list (list): list of words.
         instances (obj): Key/value pairs of words/counts.
-        after (str): The parameter for the next page of the API results.
-        count (int): The parameter of results matched thus far.
+        after (str): next page of the API results.
+        count (int): results matched thus far.
     """
     url = "https://www.reddit.com/r/{}/hot/.json".format(subreddit)
     headers = {

@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""function that queries the Reddit API and returns a list containing the titles"""
+"""queries the Reddit API and returns a list containing the titles"""
 
 import requests
 
